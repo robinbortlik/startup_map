@@ -1,0 +1,62 @@
+<script type="text/x-handlebars" data-template-name='navigation'>
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Startup Map</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><a href="#" {{action clearFilter}}>Home</a></li>
+          <li>
+            <a href="#" {{action filterEvents}}>
+              Events
+              {{#view App.CounterView contentBinding="App.mapView.eventsController"}}
+                {{view.content.length}}
+              {{/view}}
+            </a>
+          </li>
+          <li>
+            <a href="#" {{action filterJobs}}>
+              Jobs
+              {{#view App.CounterView contentBinding="App.mapView.jobsController"}}
+                {{view.content.length}}
+              {{/view}}
+            </a>
+          </li>
+          <li>
+            <a href="#" {{action filterNews}}>
+              News
+              {{#view App.CounterView contentBinding="App.mapView.newsController"}}
+                {{view.content.length}}
+              {{/view}}
+            </a>
+          </li>
+          <li>
+            <a href="#" {{action filterStartups}}>
+              Startups
+              {{#view App.CounterView contentBinding="App.mapView.startupsController"}}
+                {{view.content.length}}
+              {{/view}}
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add yourself<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" {{action newEvent}} ><i class="icon-time" style="margin-right:5px"></i>Event</a></li>
+              <li><a href="#" {{action newJob}}><i class="icon-user" style="margin-right:5px"></i>Job</a></li>
+              <li><a href="#" {{action newNews}}><i class="icon-list-alt" style="margin-right:5px"></i>News</a></li>
+              <li><a href="#" {{action newStartup}}><i class="icon-heart" style="margin-right:5px"></i>Startup</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-search pull-left" action="">
+          <input type="text" class="search-query span2" placeholder="Search">
+        </form>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script type="text/x-handlebars" data-template-name='counter'>
+  {{#with view.content}}
+    <span>{{title}}</span>
+  {{/with}}
+</script>

@@ -1,0 +1,26 @@
+development:
+  sessions:
+    default:
+      database: startup_map_development
+      hosts:
+        - localhost:27017
+        
+test:
+  sessions:
+    default:
+      database: startup_map_test
+      hosts:
+        - localhost:27017
+  
+
+<% if ENV['MONGOHQ_URL'] %>
+  <% uri = URI.parse(ENV['MONGOHQ_URL']) %>
+production:
+  sessions:
+    default:
+      database: <%= uri.path.sub('/','') %>
+      username: <%= uri.user %>
+      password: <%= uri.password %>
+      hosts:
+        - <%= uri.host %>:<%= uri.port %>
+<% end %>

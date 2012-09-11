@@ -1,0 +1,65 @@
+<script type="text/x-handlebars" data-template-name="news-form">
+  <div class="modal" id="myModal">
+    <div class="modal-header">
+      <button type="button" class="close" {{action destroy}}>×</button>
+      <h3>New Newsb</h3>
+    </div>
+    <div class="modal-body">
+     <form action="#" class="form-horizontal">
+      <div class="control-group">
+       <label class="control-label">Title</label>
+       <div class="controls">
+        {{view Ember.TextField valueBinding="title" placeholder="News title"}}
+       </div>
+       </div>
+       
+       <div class="control-group">
+       <label class="control-label">Description</label>
+       <div class="controls">
+        {{view Ember.TextArea valueBinding="description" placeholder="Description"}}
+       </div>
+       </div>
+       
+       <div class="control-group">
+       <label class="control-label">Address</label>
+       <div class="controls">
+        {{view Ember.TextField valueBinding="address" placeholder="Street, Street number, City"}}
+       </div>
+       </div>
+       
+       <div class="control-group">
+        <label class="control-label">Startup</label>
+        <div class="controls">
+         {{view Ember.TextField valueBinding="startup" placeholder="Startup"}}
+        </div>
+        </div>
+       
+       <div class="control-group">
+       <label class="control-label">Email</label>
+       <div class="controls">
+        {{view Ember.TextField valueBinding="email" placeholder="Email"}}
+       </div>
+       </div>
+       
+       <div class="control-group">
+        <label class="control-label">URL</label>
+        <div class="controls">
+         {{view Ember.TextField valueBinding="url" placeholder="http://www.example.com"}}
+        </div>
+        </div>
+       
+       <div class="control-group">
+         <label class="control-label">Tags</label>
+         <div class="controls">
+          {{view Ember.TextField valueBinding="tags" placeholder="Add tag"}}
+         </div>
+       </div>   
+       
+     </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn" {{action destroy}}>Close</a>
+      <a href="#" class="btn btn-primary" {{action submit}}>Save changes</a>
+    </div>
+  </div>
+</script>

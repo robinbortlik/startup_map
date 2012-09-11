@@ -1,0 +1,96 @@
+<script type="text/x-handlebars" data-template-name="event-form">
+  <div class="modal" id="myModal">
+    <div class="modal-header">
+      <button type="button" class="close" {{action destroy}}>×</button>
+      <h3>New Event</h3>
+    </div>
+    <div class="modal-body">
+     <form action="#" class="form-horizontal">
+      <div class="control-group">
+       <label class="control-label">Name</label>
+       <div class="controls">
+        {{view Ember.TextField valueBinding="name" placeholder="Event title"}}
+       </div>
+       </div>
+       
+       <div class="control-group">
+       <label class="control-label">Description</label>
+       <div class="controls">
+        {{view Ember.TextArea valueBinding="description" placeholder="Description"}}
+       </div>
+       </div>
+       
+       <div class="control-group">
+       <label class="control-label">Address</label>
+       <div class="controls">
+        {{view Ember.TextField valueBinding="address" placeholder="Street, Street number, City"}}
+       </div>
+       </div>
+       
+       <div class="control-group">
+       <label class="control-label">Link to event page</label>
+       <div class="controls">
+        {{view Ember.TextField valueBinding="url" placeholder="http://www.example.com"}}
+       </div>
+       </div>
+       
+       <div class="control-group">
+       <label class="control-label">Email</label>
+       <div class="controls">
+        {{view Ember.TextField valueBinding="email" placeholder="Email"}}
+       </div>
+       </div>
+       
+       <div class="control-group">
+         <label class="control-label">Tags</label>
+         <div class="controls">
+          {{view Ember.TextField valueBinding="tags" placeholder="Add tag"}}
+         </div>
+       </div>
+       
+       <div class="control-group">
+         <label class="control-label">From</label>
+         <div class="controls">
+           {{view Ember.TextField valueBinding="from_date" placeholder="Start date" class="input-small datepicker"}}
+           {{view Ember.TextField valueBinding="start_time" placeholder="Start time" class="input-small"}}
+         </div>
+       </div>
+       
+       <div class="control-group">
+         <label class="control-label">To</label>
+         <div class="controls">
+           {{view Ember.TextField valueBinding="to_date" placeholder="End date" class="input-small datepicker"}}
+           {{view Ember.TextField valueBinding="end_time" placeholder="End time" class="input-small"}}
+         </div>
+       </div>
+       
+       <div class="control-group">
+         <label class="control-label">Repeat</label>
+         <div class="controls">
+         {{view Ember.TextField valueBinding="repeat"}}
+         </div>
+       </div>
+       
+       <div class="control-group">
+         <label class="control-label">Registration</label>
+         <div class="controls">
+          <label class="checkbox-label">{{view Ember.Checkbox valueBinding="registration_required"}} required</label>
+          {{view Ember.TextField valueBinding="registration_url" placeholder="http://www.example.com"}}
+         </div>
+       </div>
+       
+      <div class="control-group">
+        <label class="control-label">Registration Deadline</label>
+        <div class="controls">
+          {{view Ember.TextField valueBinding="registration_deadline" placeholder="Deadline" class="input-small datepicker"}}
+        </div>
+      </div> 
+       
+     </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn" {{action destroy}}>Close</a>
+      <a href="#" class="btn btn-primary" {{action submit}}>Save changes</a>
+    </div>
+  </div>
+</script>
